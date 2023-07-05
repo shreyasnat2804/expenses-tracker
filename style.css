@@ -1,0 +1,76 @@
+body {
+  background-color: #22577a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: lighter;
+  color: #57cc99;
+  display: flex;
+  justify-content: center;
+}
+
+#expForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #57cc99;
+  border-radius: 20px;
+  max-width: 570px;
+}
+#expenseInfo {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+#expenseInfo p {
+  color: #22577a;
+}
+
+button {
+  border-radius: 12px;
+  background-color: #c7f9cc;
+  display: block;
+  margin: 0 auto;
+  box-shadow: none;
+  padding: 10px;
+}
+
+#expenseBtn {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.txt {
+  padding: 6px;
+  border: none;
+  border-radius: 10px;
+}
+
+#submitBtn {
+  border-radius: 12px;
+  background-color: #22577a;
+  color: #c7f9cc;
+  display: block;
+  margin: 0 auto;
+  box-shadow: none;
+  padding: 10px;
+}
+
+#expensesList li {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #80ed99;
+  color: #22577a;
+  width: auto;
+  max-width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-height: 20px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+#expensesList li.expand {
+  max-height: 200px;
+}
