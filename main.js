@@ -17,6 +17,24 @@ addExpenseButton.addEventListener("click", function () {
     displayExpense(expenseForm);
     expenseForm.reset(); // Reset the form fields
     expenseForm.parentNode.removeChild(expenseForm);
+
+    // Use Fetch API to send the expense form data to the server
+  fetch("/add_expense", {
+    method: "POST",
+    body: new FormData(expenseForm)
+  })
+    .then(response => response.text())
+    .then(message => {
+      console.log(message); // Display the response message in the console
+      // Optionally, you can display a success message on the webpage
+      document.getElementById("successMessage").innerText = "Expense added successfully!";
+    })
+    .catch(error => {
+      console.error(error);
+      // Display an error message on the webpage if the request fails
+      document.getElementById("successMessage").innerText = "Error adding expense.";
+    });
+
   });
 });
 
@@ -51,7 +69,7 @@ function addExpenseForm() {
   //getting div
   var expenseForm = document.getElementById("expForm");
   expenseForm.innerHTML = `
-        <form id="expenseInfo" class = "expenseForm"> 
+        <form id="expenseInfo" class="expenseForm" action="/add_expense" method="POST"> 
         <p>Name<br>
         <input type="text" name="name" class = "txt"><br><br></p>
         <p>Cost<br>
